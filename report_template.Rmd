@@ -52,7 +52,7 @@ The true number of clusters will correspond to the model with the smallest value
 
 The R package `Rmixmod` was used to estimate two Gaussian mixture models. 
 
-**TODO**: add code for a Gaussian mixture model (GMM) with 2 components. 
+**[DONE]**: add code for a Gaussian mixture model (GMM) with 2 components. 
 ```{r}
 library(Rmixmod)
 # mixmodCluster fits a Gaussian mixture model
@@ -62,29 +62,31 @@ mod2 <- mixmodCluster(faithful, nbCluster=2, criterion="ICL")
 ```
 
 A summary of both models is shown below. 
-**TODO**: add summary of the 2-component GMM. 
+**[DONE]**: add summary of the 2-component GMM. 
 ```{r}
 summary(mod1)
 summary(mod2)
 ```
 
-**TODO**: Add a sentence giving the ICL of the 1-component GMM for comparison. 
+**[DONE]**: Add a sentence giving the ICL of the 1-component GMM for comparison. 
 
 The model with 2 components has an ICL value of `r mod2@bestResult@criterionValue`. 
-The model with 1 component has...
+The model with 1 component has an ICL value of `r mod1@bestResult@criterionValue`
 
-The best performing model has ... components. 
+The best performing model has 2 components. 
 
 A plot of the optimal clustering is shown below. 
 
-**TODO**: plot the best performing model. 
+**[DONE]**: plot the best performing model. 
 
 ```{r}
-# plot()
+plot(mod2)
 ```
 
 # Conclusion
 
-**TODO**: Write a brief conclusion. 
+The data supports our hypothesis that there are two kinds of eruptions (short and frequent, and long and infrequent).
+The short, frequent eruptions have an estimated mean duration of 2.0 minutes and a mean inter-eruption time of 54.5 minutes.
+The long, infrequent eruptions have an estimates mean duration of 4.3 minutes and a mean inter-eruption time of 80.0 minutes.
 
 
